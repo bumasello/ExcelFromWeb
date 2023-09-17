@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload de Planilha Excel</title>
+    <link rel="stylesheet" href="./Assets/css/upload.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Upload de Planilha Excel</h1>
+      <p>Por favor, selecione um arquivo Excel (.xlsx) para fazer o upload:</p>
+      <form enctype="multipart/form-data" class="formulario">
+        <input
+          type="file"
+          name="file"
+          id="excelFile"
+          accept=".xlsx"
+          class="inputFile"
+        />
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <div class="resultado"></div>
+
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fs-extra@11.1.1/lib/index.min.js"></script>
+    <script type="module" src="./Assets/js/upload.js"></script>
+  </body>
+</html>

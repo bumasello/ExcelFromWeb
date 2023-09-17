@@ -1,6 +1,5 @@
 import qualiService from "../Service/qualiService.js";
-import exceljs from "exceljs";
-import oracledb from "oracledb";
+import fs from "fs-extra";
 
 async function importacao(req, filename, next, err) {
   try {

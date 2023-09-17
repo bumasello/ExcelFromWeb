@@ -22,7 +22,7 @@ router.post("/profile", upload.single("file"), async function (req, res, next) {
   console.log("Arquivo enviado com sucesso: ", req.file.filename);
   try {
     await qualiController.importacao(req, req.file.filename, next);
-    res.status(200).send("Arquivo processado");
+    res.status(200).send();
   } catch (err) {
     next(err);
   }

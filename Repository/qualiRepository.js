@@ -1,4 +1,5 @@
 import oracledb from "oracledb";
+import fs from "fs/promises";
 
 async function importacao(data) {
   try {
@@ -65,6 +66,13 @@ async function importacao(data) {
     await connection.close();
     console.log("Conexão fechada!");
     console.log("Inserido no banco!");
+    const dadosJSON = JSON.stringify(dataToDb, null, 2);
+    try {
+      await fs.writeFile("../Qualidade/Public/dataJSON.json", dadosJSON);
+      console.log("Arquivo criado com sucesso");
+    } catch (e) {
+      console.log("Erro ao escrever arquivo!");
+    }
   } catch (error) {
     console.error(error);
   }
